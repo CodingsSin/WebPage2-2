@@ -33,7 +33,7 @@ userNameElement.onclick = () => {
     for (i=0; i<userName.length; i++) {
         var ch = userName.charAt(i);
         if (ch>='0' && ch<='9') {
-            confirm("이름에 숫자가 들어갑니다. 다시 입력해주세요.");
+            alert("이름에 숫자가 들어갑니다. 다시 입력해주세요.");
             return false;
         }
     }
@@ -45,13 +45,13 @@ userNameElement.onclick = () => {
 StudentID.onclick = () => {
     const sID = prompt("학번을 입력해주세요.");
     if (sID.length != 9) {
-        confirm("잘못된 학번을 입력하였습니다. 다시 입력해주세요.");
+        alert("잘못된 학번을 입력하였습니다. 다시 입력해주세요.");
         return false;
     }
     for (i=0; i<sID.length; i++) {
         var ch = sID.charAt(i);
         if (!(ch >= '0' && ch <= '9')) {
-            confirm("학번은 숫자로만 입력 가능합니다.");
+            alert("학번은 숫자로만 입력 가능합니다.");
             return false;
         }
     }
@@ -59,7 +59,7 @@ StudentID.onclick = () => {
     const regexp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
     const eMail = prompt("이메일을 입력해주세요.");
     if (eMail.match(regexp) === null) {
-        confirm("이메일 양식에 맞게 입력해주세요.");
+        alert("이메일 양식에 맞게 입력해주세요.");
         return false;
     }
 
