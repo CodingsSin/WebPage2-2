@@ -18,6 +18,16 @@ if (localStorage.getItem('userName') !== 'null') {
 
 userNameElement.onclick = () => {
     const userName = prompt('이름을 입력해주세요.');
+    if (userName == null) {
+        userName = '홍길동';
+    }
+    for (i=0; i<userName.length; i++) {
+        var ch = userName.charAt(i);
+        if (ch>='0' && ch<='9') {
+            confirm("이름에 숫자가 들어갑니다. 다시 입력해주세요.");
+            return false;
+        }
+    }
     localStorage.setItem('userName', userName);
 
     setUserNameInnerHtml(userName);
