@@ -74,6 +74,7 @@ header > div.user{
   line-height: 30px;
 
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 header > div.user > span {

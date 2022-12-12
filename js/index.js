@@ -12,13 +12,13 @@ const setUserIDandMailInnerHtml = (sidnmail) => {
     StudentID.innerHTML = sidnmail;
 }
 
-if (localStorage.getItem('userName') !== 'null') {
+if (localStorage.getItem('userName') !== null) {
     setUserNameInnerHtml(localStorage.getItem('userName'));
 } else {
     setUserNameInnerHtml('홍길동');
 }
 
-if (localStorage.getItem('SIDnMail') !== 'null') {
+if (localStorage.getItem('SIDnMail') !== null) {
     setUserIDandMailInnerHtml(localStorage.getItem('SIDnMail'));
 } else {
     setUserIDandMailInnerHtml('20210101, ABC@abc.com');
@@ -66,4 +66,8 @@ StudentID.onclick = () => {
     const SIDnMail = sID + " , " + eMail;
     localStorage.setItem('SIDnMail', SIDnMail);
     setUserIDandMailInnerHtml(SIDnMail);
+};
+
+headerUserNameElement.onclick = () => {
+    window.localStorage.clear();
 };
