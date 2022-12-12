@@ -31,8 +31,6 @@ userNameElement.onclick = () => {
     localStorage.setItem('userName', userName);
 
     setUserNameInnerHtml(userName);
-    // headerUserNameElement.innerHTML = `${userName} <span>님</span>`;
-    // userNameElement.innerHTML = `${userName} <span>님</span>`;
 };
 
 StudentID.onclick = () => {
@@ -48,15 +46,15 @@ StudentID.onclick = () => {
             return false;
         }
     }
-    
+
     const regexp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
     const eMail = prompt("이메일을 입력해주세요.");
     if (eMail.match(regexp) === null) {
-        console.log('false');
-    } else {
-        console.log('true');
+        confirm("이메일 양식에 맞게 입력해주세요.");
+        return false;
     }
+
     const SIDnMail = sID + " , " + eMail;
     localStorage.setItem('SIDnMail', SIDnMail);
     StudentID.innerHTML = SIDnMail;
-}
+};
