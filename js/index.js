@@ -1,6 +1,5 @@
 const headerUserNameElement = document.querySelector('.user');
 const userNameElement = document.querySelector('.user-name');
-//const localUserName = document.querySelector('userName');
 const StudentID = document.querySelector('.user-email');
 const localSID = document.querySelector('SIDnMail');
 
@@ -10,7 +9,7 @@ const setUserNameInnerHtml = (name) => {
     userNameElement.innerHTML = `${name} <span>님</span>`;
 }
 
-if (localStorage.getItem('userName')) {
+if (localStorage.getItem('userName') !== 'null') {
     setUserNameInnerHtml(localStorage.getItem('userName'));
     
 } else {
@@ -31,7 +30,13 @@ StudentID.onclick = () => {
     // if (!(sID <= 9 && sID >= 0 )) {
 
     // }s
+    const regexp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
     const eMail = prompt("이메일을 입력해주세요.");
+    if (eMail.match(regexp) === null) {
+        console.log('false');
+    } else {
+        console.log('true');
+    }
     const SIDnMail = sID + " , " + eMail;
     localStorage.setItem('SIDnMail', SIDnMail);
     StudentID.innerHTML = SIDnMail;

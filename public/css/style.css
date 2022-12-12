@@ -64,7 +64,8 @@ header > div.user{
   position: absolute;
   top: 25px;
   right: 30px;
-  width: 104px;
+  width: 160px;
+  text-align: right;
   height: 30px;
   font-family: 'S-Core Dream';
   font-style: normal;
@@ -159,6 +160,8 @@ div.contents > div.user-email {
   line-height: 18px;
 
   color: #000000;
+  
+  cursor: pointer;
 }
 
 div.contents > div.card-area {
